@@ -14,77 +14,99 @@ namespace Models;
  * @author Alessandro dos Santos
  * Date: 06-07-2019
  */
-class Pedido
-{
+class Pedido {
+
     //ATRIBUTOS
-    private $idpedido;
-    private $idCliente;
+    private $idPedido;
+    private $idUsuario;
+    private $idProduto;
     private $tipoPagamento;
-    private $estaPago;
+    private $idUsuarioAlteracao;
+    private $dataCadastro;
+    private $dataUltimaAlteracao;
     private $ativo;
-    
+
     //CONSTRUTORES
-    function __construct($idpedido = "", $idCliente = "", $tipoPagamento = "", $estaPago = "", $ativo = "")
-    {
-        $this->idpedido = $idpedido;
-        $this->idCliente = $idCliente;
+    function __construct($idPedido = "", $idUsuario = "", $idProduto = "", $tipoPagamento = "", $idUsuarioAlteracao = "", $dataCadastro = "", $dataUltimaAlteracao = "", $ativo = "") {
+        $this->idPedido = $idPedido;
+        $this->idUsuario = $idUsuario;
+        $this->idProduto = $idProduto;
         $this->tipoPagamento = $tipoPagamento;
-        $this->estaPago = $estaPago;
+        $this->idUsuarioAlteracao = $idUsuarioAlteracao;
+        $this->dataCadastro = $dataCadastro;
+        $this->dataUltimaAlteracao = $dataUltimaAlteracao;
         $this->ativo = $ativo;
     }
 
     //PROPRIEDADES
-    public function getIdpedido()
-    {
-        return $this->idpedido;
+    public function getIdPedido() {
+        return $this->idPedido;
     }
 
-    public function getIdCliente()
-    {
-        return $this->idCliente;
+    public function getIdUsuario() {
+        return $this->idUsuario;
     }
 
-    public function getTipoPagamento()
-    {
+    public function getIdProduto() {
+        return $this->idProduto;
+    }
+
+    public function getTipoPagamento() {
         return $this->tipoPagamento;
     }
 
-    public function getEstaPago()
-    {
-        return $this->estaPago;
+    public function getDataCadastro() {
+        return $this->dataCadastro;
     }
 
-    public function getAtivo()
-    {
+    public function getDataUltimaAlteracao() {
+        return $this->dataUltimaAlteracao;
+    }
+
+    public function getIdUsuarioAlteracao() {
+        return $this->idUsuarioAlteracao;
+    }
+
+    public function getAtivo() {
         return $this->ativo;
     }
 
-    public function setIdpedido($idpedido)
-    {
-        $this->idpedido = $idpedido;
+    public function setIdPedido($idPedido) {
+        $this->idPedido = $idPedido;
         return $this;
     }
 
-    public function setIdCliente($idCliente)
-    {
-        $this->idCliente = $idCliente;
+    public function setIdUsuario($idUsuario) {
+        $this->idUsuario = $idUsuario;
         return $this;
     }
 
-    public function setTipoPagamento($tipoPagamento)
-    {
+    public function setIdProduto($idProduto) {
+        $this->idProduto = $idProduto;
+        return $this;
+    }
+
+    public function setTipoPagamento($tipoPagamento) {
         $this->tipoPagamento = $tipoPagamento;
         return $this;
     }
 
-    public function setEstaPago($estaPago)
-    {
-        $this->estaPago = $estaPago;
+    public function setDataCadastro($dataCadastro) {
+        $this->dataCadastro = $dataCadastro;
         return $this;
     }
 
-    public function setAtivo($ativo)
-    {
+    public function setDataUltimaAlteracao($dataUltimaAlteracao) {
+        $this->dataUltimaAlteracao = $dataUltimaAlteracao;
+        return $this;
+    }
+
+    public function setIdUsuarioAlteracao($idUsuarioAlteracao) {
+        $this->idUsuarioAlteracao = $idUsuarioAlteracao;
+        return $this;
+    }
+
+    public function setAtivo($ativo) {
         $this->ativo = $ativo;
         return $this;
     }
