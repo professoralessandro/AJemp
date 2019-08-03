@@ -30,12 +30,11 @@ class ImagemDAO {
     //DAOMETODOS
     public function adicionarImagem(Imagem $imagem) {
         $sqlComand = "CALL spAdicionarImagem('";
-        $sqlComand = $sqlComand .$imagem->getIdImagem()."',";
-        $sqlComand = $sqlComand .$imagem->getEmailEmitente()."',";
-        $sqlComand = $sqlComand .$imagem->getEmailDestinatario()."',";
-        $sqlComand = $sqlComand .$imagem->getAssunto()."',";
-        $sqlComand = $sqlComand .$imagem->getMensagem()."',";
-        $sqlComand = $sqlComand .$imagem->getIdImagemAlteracao(). "')";
+        $sqlComand = $sqlComand .$imagem->getIdProduto()."',";
+        $sqlComand = $sqlComand .$imagem->getTituloImagem()."',";
+        $sqlComand = $sqlComand .$imagem->getCaminhoImagem()."',";
+        $sqlComand = $sqlComand .$imagem->getDescricaoImagem()."',";
+        $sqlComand = $sqlComand .$imagem->getIdUsuarioAlteracao(). "')";
 
         $banco = $this->conexao->GetBanco();
         $banco->query($sqlComand);
@@ -45,10 +44,12 @@ class ImagemDAO {
     public function alterarImagem(Imagem $imagem)
     {
         $sqlComand = "CALL spAlterarImagem('";
-        $sqlComand = $sqlComand .$imagem->getEmailEmitente()."',";
-        $sqlComand = $sqlComand .$imagem->getAssunto()."',";
-        $sqlComand = $sqlComand .$imagem->getMensagem()."',";
-        $sqlComand = $sqlComand .$imagem->getIdImagemAlteracao(). "')";
+        $sqlComand = $sqlComand .$imagem->getIdImagem()."',";
+        $sqlComand = $sqlComand .$imagem->getIdProduto()."',";
+        $sqlComand = $sqlComand .$imagem->getTituloImagem()."',";
+        $sqlComand = $sqlComand .$imagem->getCaminhoImagem()."',";
+        $sqlComand = $sqlComand .$imagem->getDescricaoImagem()."',";
+        $sqlComand = $sqlComand .$imagem->getIdUsuarioAlteracao(). "')";
 
         $banco = $this->conexao->GetBanco();
         $banco->query($sqlComand);
@@ -57,7 +58,7 @@ class ImagemDAO {
     
     public function excluirImagem($idImagem)
     {
-        $sqlComand = "CALL spAlterarImagem('";
+        $sqlComand = "CALL spExcluirImagem('";
         $sqlComand = $sqlComand .$idImagem. "')";
 
         $banco = $this->conexao->GetBanco();

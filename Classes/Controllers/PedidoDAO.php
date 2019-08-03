@@ -30,11 +30,10 @@ class PedidoDAO {
     //DAOMETODOS
     public function adicionarPedido(Pedido $pedido) {
         $sqlComand = "CALL spAdicionarPedido('";
-        $sqlComand = $sqlComand .$pedido->getIdUsuario()."',";
-        $sqlComand = $sqlComand .$pedido->getEmailEmitente()."',";
-        $sqlComand = $sqlComand .$pedido->getEmailDestinatario()."',";
-        $sqlComand = $sqlComand .$pedido->getAssunto()."',";
-        $sqlComand = $sqlComand .$pedido->getMensagem()."',";
+        $sqlComand = $sqlComand .$pedido->getIdUsuario()."','";
+        $sqlComand = $sqlComand .$pedido->getIdProduto()."','";
+        $sqlComand = $sqlComand .$pedido->getTipoPagamento()."','";
+        $sqlComand = $sqlComand .$pedido->getEstaPago()."','";
         $sqlComand = $sqlComand .$pedido->getIdUsuarioAlteracao(). "')";
 
         $banco = $this->conexao->GetBanco();
@@ -45,9 +44,11 @@ class PedidoDAO {
     public function alterarPedido(Pedido $pedido)
     {
         $sqlComand = "CALL spAlterarPedido('";
-        $sqlComand = $sqlComand .$pedido->getEmailEmitente()."',";
-        $sqlComand = $sqlComand .$pedido->getAssunto()."',";
-        $sqlComand = $sqlComand .$pedido->getMensagem()."',";
+        $sqlComand = $sqlComand .$pedido->getIdPedido()."','";
+        $sqlComand = $sqlComand .$pedido->getIdUsuario()."','";
+        $sqlComand = $sqlComand .$pedido->getIdProduto()."','";
+        $sqlComand = $sqlComand .$pedido->getTipoPagamento()."','";
+        $sqlComand = $sqlComand .$pedido->getEstaPago()."','";
         $sqlComand = $sqlComand .$pedido->getIdUsuarioAlteracao(). "')";
 
         $banco = $this->conexao->GetBanco();
@@ -57,7 +58,7 @@ class PedidoDAO {
     
     public function excluirPedido($idPedido)
     {
-        $sqlComand = "CALL spAlterarPedido('";
+        $sqlComand = "CALL spExcluirPedido('";
         $sqlComand = $sqlComand .$idPedido. "')";
 
         $banco = $this->conexao->GetBanco();

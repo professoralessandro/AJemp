@@ -30,11 +30,11 @@ class MaillingDAO {
     //DAOMETODOS
     public function adicionarMailling(Mailling $mailling) {
         $sqlComand = "CALL spAdicionarMailling('";
-        $sqlComand = $sqlComand .$mailling->getIdUsuario()."',";
-        $sqlComand = $sqlComand .$mailling->getEmailEmitente()."',";
-        $sqlComand = $sqlComand .$mailling->getEmailDestinatario()."',";
-        $sqlComand = $sqlComand .$mailling->getAssunto()."',";
-        $sqlComand = $sqlComand .$mailling->getMensagem()."',";
+        $sqlComand = $sqlComand .$mailling->getIdUsuario()."','";
+        $sqlComand = $sqlComand .$mailling->getEmailEmitente()."','";
+        $sqlComand = $sqlComand .$mailling->getEmailDestinatario()."','";
+        $sqlComand = $sqlComand .$mailling->getAssunto()."','";
+        $sqlComand = $sqlComand .$mailling->getMensagem()."','";
         $sqlComand = $sqlComand .$mailling->getIdUsuarioAlteracao(). "')";
 
         $banco = $this->conexao->GetBanco();
@@ -45,9 +45,13 @@ class MaillingDAO {
     public function alterarMailling(Mailling $mailling)
     {
         $sqlComand = "CALL spAlterarMailling('";
-        $sqlComand = $sqlComand .$mailling->getEmailEmitente()."',";
-        $sqlComand = $sqlComand .$mailling->getAssunto()."',";
-        $sqlComand = $sqlComand .$mailling->getMensagem()."',";
+        $sqlComand = $sqlComand .$mailling->getMensagem()."','";
+        $sqlComand = $sqlComand .$mailling->getIdUsuario()."','";
+        $sqlComand = $sqlComand .$mailling->getEmailEmitente()."','";
+        $sqlComand = $sqlComand .$mailling->getEmailDestinatario()."','";
+        $sqlComand = $sqlComand .$mailling->getAssunto()."','";
+        $sqlComand = $sqlComand .$mailling->getMensagem()."','";
+        $sqlComand = $sqlComand .$mailling->getStatus()."','";
         $sqlComand = $sqlComand .$mailling->getIdUsuarioAlteracao(). "')";
 
         $banco = $this->conexao->GetBanco();
@@ -57,7 +61,7 @@ class MaillingDAO {
     
     public function excluirMailling($idMailling)
     {
-        $sqlComand = "CALL spAlterarMailling('";
+        $sqlComand = "CALL spExcluirMailling('";
         $sqlComand = $sqlComand .$idMailling. "')";
 
         $banco = $this->conexao->GetBanco();

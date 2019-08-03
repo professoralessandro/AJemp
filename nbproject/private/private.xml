@@ -3,7 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/AjempDAO/Classes/Controllers/ImagemDAO.php</file>
+            <file>file:/C:/xampp/htdocs/AJempDAO/Classes/Controllers/ProdutoDAO%20.php</file>
+            <file>file:/C:/xampp/htdocs/AJempDAO/Classes/Controllers/UsuarioDAO.php</file>
+            <file>file:/C:/xampp/htdocs/AJempDAO/Classes/Controllers/MaillingDAO.php</file>
+            <file>file:/C:/xampp/htdocs/AJempDAO/Classes/Controllers/ImagemDAO.php</file>
+            <file>file:/C:/xampp/htdocs/AJempDAO/Classes/Controllers/PedidoDAO.php</file>
+            <file>file:/C:/xampp/htdocs/AJempDAO/Classes/Controllers/LogDAO.php</file>
         </group>
     </open-files>
 </project-private>

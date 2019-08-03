@@ -21,19 +21,19 @@ class Imagem {
     private $idProduto;
     private $tituloImagem;
     private $caminhoImagem;
-    private $DescricaoImagem;
+    private $descricaoImagem;
     private $idUsuarioAlteracao;
     private $dataCadastro;
     private $dataUltimaAlteracao;
     private $ativo;
 
     //CONSTRUTOR
-    function __construct($idImagem = "", $idProduto = "", $tituloImagem = "", $caminhoImagem = "", $DescricaoImagem = "", $idUsuarioAlteracao = "", $dataCadastro = "", $dataUltimaAlteracao = "", $ativo = "") {
+    function __construct($idImagem ="", $idProduto ="", $tituloImagem ="", $caminhoImagem ="", $descricaoImagem ="", $idUsuarioAlteracao ="", $dataCadastro ="", $dataUltimaAlteracao ="", $ativo ="") {
         $this->idImagem = $idImagem;
         $this->idProduto = $idProduto;
         $this->tituloImagem = $tituloImagem;
         $this->caminhoImagem = $caminhoImagem;
-        $this->DescricaoImagem = $DescricaoImagem;
+        $this->descricaoImagem = $descricaoImagem;
         $this->idUsuarioAlteracao = $idUsuarioAlteracao;
         $this->dataCadastro = $dataCadastro;
         $this->dataUltimaAlteracao = $dataUltimaAlteracao;
@@ -58,7 +58,7 @@ class Imagem {
     }
 
     public function getDescricaoImagem() {
-        return $this->DescricaoImagem;
+        return $this->descricaoImagem;
     }
 
     public function getIdUsuarioAlteracao() {
@@ -97,8 +97,8 @@ class Imagem {
         return $this;
     }
 
-    public function setDescricaoImagem($DescricaoImagem) {
-        $this->DescricaoImagem = $DescricaoImagem;
+    public function setDescricaoImagem($descricaoImagem) {
+        $this->descricaoImagem = $descricaoImagem;
         return $this;
     }
 
@@ -121,5 +121,6 @@ class Imagem {
         $this->ativo = $ativo;
         return $this;
     }
-    //PROPRIEDADES
+
+        //PROPRIEDADES
 }//CLASS

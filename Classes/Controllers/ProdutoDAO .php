@@ -30,11 +30,12 @@ class ProdutoDAO {
     //DAOMETODOS
     public function adicionarProduto(Produto $produto) {
         $sqlComand = "CALL spAdicionarProduto('";
-        $sqlComand = $sqlComand .$produto->getIdUsuario()."',";
-        $sqlComand = $sqlComand .$produto->getEmailEmitente()."',";
-        $sqlComand = $sqlComand .$produto->getEmailDestinatario()."',";
-        $sqlComand = $sqlComand .$produto->getAssunto()."',";
-        $sqlComand = $sqlComand .$produto->getMensagem()."',";
+        $sqlComand = $sqlComand .$produto->getNomeProduto()."','";
+        $sqlComand = $sqlComand .$produto->getPrecoProduto()."','";
+        $sqlComand = $sqlComand .$produto->getCodigoBarras()."','";
+        $sqlComand = $sqlComand .$produto->getDescricao()."','";
+        $sqlComand = $sqlComand .$produto->getCategoria()."','";
+        $sqlComand = $sqlComand .$produto->getImagem()."','";
         $sqlComand = $sqlComand .$produto->getIdUsuarioAlteracao(). "')";
 
         $banco = $this->conexao->GetBanco();
@@ -45,11 +46,14 @@ class ProdutoDAO {
     public function alterarProduto(Produto $produto)
     {
         $sqlComand = "CALL spAlterarProduto('";
-        $sqlComand = $sqlComand .$produto->getEmailEmitente()."',";
-        $sqlComand = $sqlComand .$produto->getAssunto()."',";
-        $sqlComand = $sqlComand .$produto->getMensagem()."',";
+        $sqlComand = $sqlComand .$produto->getIdProduto()."','";
+        $sqlComand = $sqlComand .$produto->getNomeProduto()."','";
+        $sqlComand = $sqlComand .$produto->getPrecoProduto()."','";
+        $sqlComand = $sqlComand .$produto->getCodigoBarras()."','";
+        $sqlComand = $sqlComand .$produto->getDescricao()."','";
+        $sqlComand = $sqlComand .$produto->getCategoria()."','";
+        $sqlComand = $sqlComand .$produto->getImagem()."','";
         $sqlComand = $sqlComand .$produto->getIdUsuarioAlteracao(). "')";
-
         $banco = $this->conexao->GetBanco();
         $banco->query($sqlComand);
         $this->conexao->Desconectar();
@@ -57,7 +61,7 @@ class ProdutoDAO {
     
     public function excluirProduto($idProduto)
     {
-        $sqlComand = "CALL spAlterarProduto('";
+        $sqlComand = "CALL spExcluirProduto('";
         $sqlComand = $sqlComand .$idProduto. "')";
 
         $banco = $this->conexao->GetBanco();

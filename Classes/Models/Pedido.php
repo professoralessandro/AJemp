@@ -21,23 +21,24 @@ class Pedido {
     private $idUsuario;
     private $idProduto;
     private $tipoPagamento;
+    private $estaPago;
     private $idUsuarioAlteracao;
     private $dataCadastro;
     private $dataUltimaAlteracao;
     private $ativo;
 
     //CONSTRUTORES
-    function __construct($idPedido = "", $idUsuario = "", $idProduto = "", $tipoPagamento = "", $idUsuarioAlteracao = "", $dataCadastro = "", $dataUltimaAlteracao = "", $ativo = "") {
+    function __construct($idPedido ="", $idUsuario ="", $idProduto ="", $tipoPagamento ="", $estaPago ="", $idUsuarioAlteracao ="", $dataCadastro ="", $dataUltimaAlteracao ="", $ativo ="") {
         $this->idPedido = $idPedido;
         $this->idUsuario = $idUsuario;
         $this->idProduto = $idProduto;
         $this->tipoPagamento = $tipoPagamento;
+        $this->estaPago = $estaPago;
         $this->idUsuarioAlteracao = $idUsuarioAlteracao;
         $this->dataCadastro = $dataCadastro;
         $this->dataUltimaAlteracao = $dataUltimaAlteracao;
         $this->ativo = $ativo;
     }
-
     //PROPRIEDADES
     public function getIdPedido() {
         return $this->idPedido;
@@ -55,16 +56,20 @@ class Pedido {
         return $this->tipoPagamento;
     }
 
+    public function getEstaPago() {
+        return $this->estaPago;
+    }
+
+    public function getIdUsuarioAlteracao() {
+        return $this->idUsuarioAlteracao;
+    }
+
     public function getDataCadastro() {
         return $this->dataCadastro;
     }
 
     public function getDataUltimaAlteracao() {
         return $this->dataUltimaAlteracao;
-    }
-
-    public function getIdUsuarioAlteracao() {
-        return $this->idUsuarioAlteracao;
     }
 
     public function getAtivo() {
@@ -91,6 +96,16 @@ class Pedido {
         return $this;
     }
 
+    public function setEstaPago($estaPago) {
+        $this->estaPago = $estaPago;
+        return $this;
+    }
+
+    public function setIdUsuarioAlteracao($idUsuarioAlteracao) {
+        $this->idUsuarioAlteracao = $idUsuarioAlteracao;
+        return $this;
+    }
+
     public function setDataCadastro($dataCadastro) {
         $this->dataCadastro = $dataCadastro;
         return $this;
@@ -98,11 +113,6 @@ class Pedido {
 
     public function setDataUltimaAlteracao($dataUltimaAlteracao) {
         $this->dataUltimaAlteracao = $dataUltimaAlteracao;
-        return $this;
-    }
-
-    public function setIdUsuarioAlteracao($idUsuarioAlteracao) {
-        $this->idUsuarioAlteracao = $idUsuarioAlteracao;
         return $this;
     }
 

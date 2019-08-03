@@ -14,11 +14,14 @@ namespace Models;
  * @author Alessandro dos Santos
  * Date: 06-07-2019
  */
-class Usuario
-{
+class Usuario {
+
     //ATRIBUTOS
     private $idUsuario;
+    private $razaoSocial;
     private $nomeUsuario;
+    private $CPF;
+    private $CNPJ;
     private $password;
     private $email;
     private $telefone;
@@ -32,11 +35,14 @@ class Usuario
     private $dataCadastro;
     private $dataUltimaAlteracao;
     private $ativo;
-    
+
     //CONSTRUTOR
-    function __construct($idUsuario = "", $nomeUsuario = "", $password = "", $email = "", $telefone = "", $endereco = "", $bairro = "", $cidade = "", $estado = "", $cep = "", $imagem = "", $idUsuarioAlteracao = "", $dataCadastro = "", $dataUltimaAlteracao = "", $ativo = "") {
+    function __construct($idUsuario = "", $razaoSocial = "", $nomeUsuario = "", $CPF = "", $CNPJ = "", $password = "", $email = "", $telefone = "", $endereco = "", $bairro = "", $cidade = "", $estado = "", $cep = "", $imagem = "", $idUsuarioAlteracao = "", $dataCadastro = "", $dataUltimaAlteracao = "", $ativo = "") {
         $this->idUsuario = $idUsuario;
+        $this->razaoSocial = $razaoSocial;
         $this->nomeUsuario = $nomeUsuario;
+        $this->CPF = $CPF;
+        $this->CNPJ = $CNPJ;
         $this->password = $password;
         $this->email = $email;
         $this->telefone = $telefone;
@@ -50,15 +56,27 @@ class Usuario
         $this->dataCadastro = $dataCadastro;
         $this->dataUltimaAlteracao = $dataUltimaAlteracao;
         $this->ativo = $ativo;
-    }
+    }//CONSTRUTOR
 
     //PROPRIEDADES
     public function getIdUsuario() {
         return $this->idUsuario;
     }
 
+    public function getRazaoSocial() {
+        return $this->razaoSocial;
+    }
+
     public function getNomeUsuario() {
         return $this->nomeUsuario;
+    }
+
+    public function getCPF() {
+        return $this->CPF;
+    }
+
+    public function getCNPJ() {
+        return $this->CNPJ;
     }
 
     public function getPassword() {
@@ -118,8 +136,23 @@ class Usuario
         return $this;
     }
 
+    public function setRazaoSocial($razaoSocial) {
+        $this->razaoSocial = $razaoSocial;
+        return $this;
+    }
+
     public function setNomeUsuario($nomeUsuario) {
         $this->nomeUsuario = $nomeUsuario;
+        return $this;
+    }
+
+    public function setCPF($CPF) {
+        $this->CPF = $CPF;
+        return $this;
+    }
+
+    public function setCNPJ($CNPJ) {
+        $this->CNPJ = $CNPJ;
         return $this;
     }
 
@@ -188,4 +221,4 @@ class Usuario
         return $this;
     }
     //PROPRIEDADES
-}
+}//CLASS

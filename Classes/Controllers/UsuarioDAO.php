@@ -30,11 +30,19 @@ class UsuarioDAO {
     //DAOMETODOS
     public function adicionarUsuario(Usuario $usuario) {
         $sqlComand = "CALL spAdicionarUsuario('";
-        $sqlComand = $sqlComand .$usuario->getIdUsuario()."',";
-        $sqlComand = $sqlComand .$usuario->getEmailEmitente()."',";
-        $sqlComand = $sqlComand .$usuario->getEmailDestinatario()."',";
-        $sqlComand = $sqlComand .$usuario->getAssunto()."',";
-        $sqlComand = $sqlComand .$usuario->getMensagem()."',";
+        $sqlComand = $sqlComand .$usuario->getRazaoSocial()."','";
+        $sqlComand = $sqlComand .$usuario->getNomeUsuario()."','";
+        $sqlComand = $sqlComand .$usuario->getCNPJ()."','";
+        $sqlComand = $sqlComand .$usuario->getCPF()."','";
+        $sqlComand = $sqlComand .$usuario->getPassword()."','";
+        $sqlComand = $sqlComand .$usuario->getEmail()."','";
+        $sqlComand = $sqlComand .$usuario->getTelefone()."','";
+        $sqlComand = $sqlComand .$usuario->getEndereco()."','";
+        $sqlComand = $sqlComand .$usuario->getBairro()."','";
+        $sqlComand = $sqlComand .$usuario->getCidade()."','";
+        $sqlComand = $sqlComand .$usuario->getEstado()."','";
+        $sqlComand = $sqlComand .$usuario->getCep()."','";
+        $sqlComand = $sqlComand .$usuario->getMensagem()."','";        
         $sqlComand = $sqlComand .$usuario->getIdUsuarioAlteracao(). "')";
 
         $banco = $this->conexao->GetBanco();
@@ -45,9 +53,21 @@ class UsuarioDAO {
     public function alterarUsuario(Usuario $usuario)
     {
         $sqlComand = "CALL spAlterarUsuario('";
-        $sqlComand = $sqlComand .$usuario->getEmailEmitente()."',";
-        $sqlComand = $sqlComand .$usuario->getAssunto()."',";
-        $sqlComand = $sqlComand .$usuario->getMensagem()."',";
+        
+        $sqlComand = $sqlComand .$usuario->getIdUsuario()."','";
+        $sqlComand = $sqlComand .$usuario->getRazaoSocial()."','";
+        $sqlComand = $sqlComand .$usuario->getNomeUsuario()."','";
+        $sqlComand = $sqlComand .$usuario->getCNPJ()."','";
+        $sqlComand = $sqlComand .$usuario->getCPF()."','";
+        $sqlComand = $sqlComand .$usuario->getPassword()."','";
+        $sqlComand = $sqlComand .$usuario->getEmail()."','";
+        $sqlComand = $sqlComand .$usuario->getTelefone()."','";
+        $sqlComand = $sqlComand .$usuario->getEndereco()."','";
+        $sqlComand = $sqlComand .$usuario->getBairro()."','";
+        $sqlComand = $sqlComand .$usuario->getCidade()."','";
+        $sqlComand = $sqlComand .$usuario->getEstado()."','";
+        $sqlComand = $sqlComand .$usuario->getCep()."','";
+        $sqlComand = $sqlComand .$usuario->getMensagem()."','";        
         $sqlComand = $sqlComand .$usuario->getIdUsuarioAlteracao(). "')";
 
         $banco = $this->conexao->GetBanco();
@@ -57,7 +77,7 @@ class UsuarioDAO {
     
     public function excluirUsuario($idUsuario)
     {
-        $sqlComand = "CALL spAlterarUsuario('";
+        $sqlComand = "CALL spExcluirUsuario('";
         $sqlComand = $sqlComand .$idUsuario. "')";
 
         $banco = $this->conexao->GetBanco();

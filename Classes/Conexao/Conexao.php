@@ -23,7 +23,7 @@ class Conexao {
     private $banco;
 
     //CONTRUTOR DA CLASSE
-    function __construct($servidor = "localhost", $usuario = "root", $senha = "", $nomeBanco = "AJempDB") {
+    function __construct($servidor = "localhost", $usuario = "root", $senha = "", $nomeBanco = "AJempDBDAO") {
         $this->SetServidor($servidor);
         $this->SetUsuario($usuario);
         $this->SetSenha($senha);
